@@ -22,7 +22,7 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
         [HttpPost("CreateRole")]
-        
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> CreateRole([FromBody] RoleDto roleDto)
         {
             try
@@ -46,7 +46,7 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
         [HttpDelete("DeleteRole/{roleId}")]
-        
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> DeleteRole(int roleId)
         {
             try
@@ -69,6 +69,7 @@ namespace RecipeManagementWebAPI.Controllers
                 return StatusCode(500, "Unexpected error during role deletion.");
             }
         }
+
         [HttpGet("GetAllRoles")]
         [Authorize(Roles = "Admin,Customer")]
         public async Task<ActionResult<IEnumerable<RoleDto>>> GetAllRoles()

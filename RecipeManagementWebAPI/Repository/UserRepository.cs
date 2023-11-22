@@ -37,45 +37,6 @@ namespace RecipeManagementWebAPI.Repository
         }
 
         
-        private async Task<string> GetUserRoleAsync(string username)
-        {
-            string sqlQuery = "SELECT r.RoleName FROM UserRoles ur " +
-                      "JOIN Roles r ON ur.RoleId = r.RoleId " +
-                      "JOIN Users u ON ur.UserId = u.UserId " +
-                      "WHERE LOWER(u.Username) = LOWER(@Username)";
-
-            using (var connection = _dapperContext.GetDbConnection())
-            {
-                var role = await connection.ExecuteScalarAsync<string>(sqlQuery, new { Username = username.ToLower() });
-                return role;
-            }
-        }
-        
-        private bool VerifyPassword(string inputPassword, string storedHashedPassword)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                // ComputeHash - returns byte array
-                byte[] inputBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(inputPassword));
-
-                // Convert byte array to a string
-                StringBuilder inputStringBuilder = new StringBuilder();
-                for (int i = 0; i < inputBytes.Length; i++)
-                {
-                    inputStringBuilder.Append(inputBytes[i].ToString("x2"));
-                }
-
-                // Compare the hashed input password with the stored hashed password
-                return inputStringBuilder.ToString().Equals(storedHashedPassword);
-            }
-        }
-
-
-        public Task<bool> UserDeleteAsync(int userId)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> UserRegistrationAsync(UserRegistrationDto registrationDto)
         {
             try
@@ -130,17 +91,7 @@ namespace RecipeManagementWebAPI.Repository
                 return stringBuilder.ToString();
             }
         }
-        public Task<bool> UserUpdateAsync(int userId, UpdateUserDto updateUserDto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<UserInfoDto>> GetAllUsersAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-
+      
         public async Task<string> LoginUserAsync(string username, string password)
         {
             try
@@ -216,6 +167,109 @@ namespace RecipeManagementWebAPI.Repository
             var tokenString = tokenHandler.WriteToken(token);
 
             return tokenString;
+        }
+
+        public async Task<bool> UserUpdateAsync(int userId, UpdateUserDto updateUserDto, string oldPassword)
+        {
+            try
+            {
+                using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
+                {
+                    dbConnection.Open();
+
+                    // Verify old password directly in the SQL query
+                    var user = await dbConnection.QueryFirstOrDefaultAsync<User>(
+                        "SELECT * FROM Users WHERE UserId = @UserId AND PasswordHash = @OldPassword",
+                        new { UserId = userId, OldPassword = HashPassword(oldPassword) });
+
+                    if (user == null)
+                    {
+                        _logger.LogWarning("Invalid old password or user not found.");
+                        return false; // Invalid old password or user not found
+                    }
+
+                    // Update user information
+                    user.Username = updateUserDto.Username;
+                    user.PasswordHash = HashPassword(updateUserDto.NewPassword); // Hash the new password
+                    user.Email = updateUserDto.Email;
+
+                    // Perform the database update
+                    var affectedRows = await dbConnection.ExecuteAsync(
+                        "UPDATE Users SET Username = @Username, PasswordHash = @PasswordHash, Email = @Email WHERE UserId = @UserId",
+                        new
+                        {
+                            user.UserId,
+                            user.Username,
+                            user.PasswordHash,
+                            user.Email
+                        });
+
+                    // Check if the update was successful
+                    return affectedRows > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error updating user: {ex.Message}");
+                throw; // Handle the exception based on your application's requirements
+            }
+        }
+        public async Task<bool> UserDeleteAsync(int userId)
+        {
+            try
+            {
+                using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
+                {
+                    dbConnection.Open();
+
+                    // Check if the user exists before deletion
+                    var existingUser = await dbConnection.QueryFirstOrDefaultAsync<User>(
+                        "SELECT * FROM Users WHERE UserId = @UserId",
+                        new { UserId = userId });
+
+                    if (existingUser == null)
+                    {
+                        _logger.LogWarning($"User with ID {userId} not found.");
+                        return false; // User not found
+                    }
+
+                    // Perform the database deletion
+                    var affectedRows = await dbConnection.ExecuteAsync(
+                        "DELETE FROM Users WHERE UserId = @UserId",
+                        new { UserId = userId });
+
+                    // Check if the deletion was successful
+                    return affectedRows > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error deleting user: {ex.Message}");
+                throw; // Handle the exception based on your application's requirements
+            }
+        }
+    
+
+        public async Task<IEnumerable<UserInfoDto>> GetAllUsersAsync()
+        {
+            try
+            {
+                using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
+                {
+                    dbConnection.Open();
+
+                    // Retrieve all users from the database
+                    var users = await dbConnection.QueryAsync<UserInfoDto>(
+                        "SELECT UserId, Username, Email FROM Users");
+
+                    return users;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error getting all users: {ex.Message}");
+                throw; // Handle the exception based on your application's requirements
+            }
         }
     }
 }

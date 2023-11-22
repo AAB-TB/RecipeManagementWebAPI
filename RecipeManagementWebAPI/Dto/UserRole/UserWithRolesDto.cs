@@ -1,10 +1,12 @@
 ﻿using RecipeManagementWebAPI.Dto.Role;
+using System.ComponentModel;
 
 namespace RecipeManagementWebAPI.Dto.UserRole
 {
     public class UserWithRolesDto
     {
-        public int UserName { get; set; }
-        public List<RoleDto> Roles { get; set; }
+       
+        public string UserName { get; set; }
+        public IEnumerable<string> Roles { get; set; }
     }
 }

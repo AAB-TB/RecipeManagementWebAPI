@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RecipeManagementWebAPI.Dto.UserRole;
 using RecipeManagementWebAPI.Services;
+using System.ComponentModel;
 
 namespace RecipeManagementWebAPI.Controllers
 {
@@ -23,7 +24,7 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
         [HttpPost("AssignRoleToUser")]
-       
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> AssignRoleToUser([FromBody] AssignRoleDto assignRoleDto)
         {
             try
@@ -46,8 +47,9 @@ namespace RecipeManagementWebAPI.Controllers
                 return StatusCode(500, "Unexpected error during role assignment.");
             }
         }
+
         [HttpGet("GetAllUsersWithRoles")]
-       
+        [Authorize(Roles = "Admin,Customer")]
         public async Task<ActionResult<IEnumerable<UserRoleDto>>> GetAllUsersWithRoles()
         {
             try
@@ -62,7 +64,7 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
         [HttpPut("UpdateUserRoles/{userId}")]
-        
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> UpdateUserRoles(int userId, [FromBody] IEnumerable<int> roleIds)
         {
             try
@@ -84,8 +86,30 @@ namespace RecipeManagementWebAPI.Controllers
                 return StatusCode(500, "Unexpected error during user role update.");
             }
         }
-        [HttpPut("RemoveUserRoles/{userId}")]
-        
+      
+        [HttpGet("user-roles/{userName}")]
+        [Authorize(Roles = "Admin,Customer")]
+        public async Task<ActionResult<UserWithRolesDto>> GetUserRoles(string userName)
+        {
+            try
+            {
+                var userWithRolesDto = await _userRoleService.UserRolesCheckAsync(userName);
+
+                if (userWithRolesDto == null)
+                {
+                    return NotFound($"User with username '{userName}' not found.");
+                }
+
+                return Ok(userWithRolesDto);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if needed
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpDelete("RemoveUserRoles/{userId}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<bool>> RemoveUserRoles(int userId, [FromBody] IEnumerable<int> roleIds)
         {
             try

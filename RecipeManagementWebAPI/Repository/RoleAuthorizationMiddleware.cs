@@ -14,7 +14,7 @@ namespace RecipeManagementWebAPI.Repository
         public async Task Invoke(HttpContext context)
         {
             // Exclude the authentication path from role authorization
-            if (context.Request.Path.Equals("/api/user/login", StringComparison.OrdinalIgnoreCase))
+            if (context.Request.Path.Equals("/api/user/login", StringComparison.OrdinalIgnoreCase)|| context.Request.Path.Equals("/api/user/Register", StringComparison.OrdinalIgnoreCase))
             {
                 await _next.Invoke(context);
                 return;

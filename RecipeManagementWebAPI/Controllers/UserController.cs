@@ -25,10 +25,8 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
 
-
         
         [HttpPost("login")]
- 
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequest)
         {
             if (loginRequest == null || string.IsNullOrWhiteSpace(loginRequest.Username) || string.IsNullOrWhiteSpace(loginRequest.Password))
@@ -46,33 +44,7 @@ namespace RecipeManagementWebAPI.Controllers
             return Ok(new { Token = token });
         }
 
-        [HttpDelete("DeleteUser/{userId}")]
-       
-        public async Task<ActionResult<bool>> DeleteUser(int userId)
-        {
-            try
-            {
-                var isDeleted = await _userService.UserDeleteAsync(userId);
-
-                if (isDeleted)
-                {
-                    return Ok(true);
-                }
-                else
-                {
-                    // You can customize the response based on your requirements
-                    return NotFound($"User with ID {userId} not found or delete failed");
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error during user delete: {ex.Message}");
-                return StatusCode(500, "Unexpected error during user delete.");
-            }
-        }
-
         [HttpPost("Register")]
-        
         public async Task<ActionResult<bool>> RegisterUser([FromBody] UserRegistrationDto registrationDto)
         {
             try
@@ -95,13 +67,14 @@ namespace RecipeManagementWebAPI.Controllers
                 return StatusCode(500, "Unexpected error during user registration.");
             }
         }
+
         [HttpPut("UpdateUser/{userId}")]
-        
-        public async Task<ActionResult<bool>> UpdateUser(int userId, [FromBody] UpdateUserDto updateUserDto)
+        [Authorize(Roles = "Admin,Customer")]
+        public async Task<ActionResult<bool>> UpdateUser(int userId, [FromBody] UpdateUserDto updateUserDto, string oldPassword)
         {
             try
             {
-                var isUpdated = await _userService.UserUpdateAsync(userId, updateUserDto);
+                var isUpdated = await _userService.UserUpdateAsync(userId, updateUserDto, oldPassword);
 
                 if (isUpdated)
                 {
@@ -117,6 +90,54 @@ namespace RecipeManagementWebAPI.Controllers
             {
                 _logger.LogError($"Error during user update: {ex.Message}");
                 return StatusCode(500, "Unexpected error during user update.");
+            }
+        }
+
+        [HttpGet("allUsers")]
+        [Authorize(Roles = "Admin,Customer")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var users = await _userService.GetAllUsersAsync();
+
+                if (users != null && users.Any())
+                {
+                    return Ok(users);
+                }
+                else
+                {
+                    return NotFound("No users found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error getting all users: {ex.Message}");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+        [HttpDelete("DeleteUser/{userId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<bool>> DeleteUser(int userId)
+        {
+            try
+            {
+                var isDeleted = await _userService.UserDeleteAsync(userId);
+
+                if (isDeleted)
+                {
+                    return Ok(true);
+                }
+                else
+                {
+                    // You can customize the response based on your requirements
+                    return NotFound($"User with ID {userId} not found or delete failed");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error during user delete: {ex.Message}");
+                return StatusCode(500, "Unexpected error during user delete.");
             }
         }
 

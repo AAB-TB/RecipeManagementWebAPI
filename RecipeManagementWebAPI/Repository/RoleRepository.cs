@@ -5,6 +5,7 @@ using RecipeManagementWebAPI.Data;
 using RecipeManagementWebAPI.Dto.Role;
 using RecipeManagementWebAPI.Models;
 using RecipeManagementWebAPI.Services;
+using System.Data;
 
 namespace RecipeManagementWebAPI.Repository
 {
@@ -100,17 +101,39 @@ namespace RecipeManagementWebAPI.Repository
         public async Task<IEnumerable<RoleDto>> GetAllRolesAsync()
         {
 
+            //try
+            //{
+            //    using (var connection = _dapperContext.GetDbConnection())
+            //    {
+            //        connection.Open();
+
+            //        // SQL query to select all roles
+            //        var sqlQuery = "SELECT * FROM Roles;";
+
+            //        // Execute the SQL query and retrieve roles
+            //        var roles = await connection.QueryAsync<Role>(sqlQuery);
+
+            //        // Map Role to RoleDto using _mapper
+            //        var roleDtoList = _mapper.Map<IEnumerable<RoleDto>>(roles);
+
+            //        return roleDtoList;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Log unexpected exceptions
+            //    _logger.LogError($"Unexpected error while retrieving roles: {ex.Message}");
+            //    // Rethrow the exception or handle it as appropriate for your application
+            //    throw;
+            //}
             try
             {
                 using (var connection = _dapperContext.GetDbConnection())
                 {
                     connection.Open();
 
-                    // SQL query to select all roles
-                    var sqlQuery = "SELECT * FROM Roles;";
-
-                    // Execute the SQL query and retrieve roles
-                    var roles = await connection.QueryAsync<Role>(sqlQuery);
+                    // Call the stored procedure
+                    var roles = await connection.QueryAsync<Role>("GetAllRoles", commandType: CommandType.StoredProcedure);
 
                     // Map Role to RoleDto using _mapper
                     var roleDtoList = _mapper.Map<IEnumerable<RoleDto>>(roles);

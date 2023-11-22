@@ -74,7 +74,7 @@ namespace RecipeManagementWebAPI.Repository
                     connection.Open();
 
                     // SQL query to retrieve users with their roles
-                    var sqlQuery = "SELECT u.UserId, u.UserName, r.RoleName " +
+                    var sqlQuery = "SELECT u.UserId, u.UserName,u.Email, r.RoleName " +
                                    "FROM Users u " +
                                    "LEFT JOIN UserRoles ur ON u.UserId = ur.UserId " +
                                    "LEFT JOIN Roles r ON ur.RoleId = r.RoleId;";
@@ -149,9 +149,45 @@ namespace RecipeManagementWebAPI.Repository
             }
         }
 
-        Task<UserWithRolesDto> IUserRoleService.UserRolesCheckAsync(string userName)
+        public async Task<UserWithRolesDto> UserRolesCheckAsync(string userName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var connection = _dapperContext.GetDbConnection())
+                {
+                    connection.Open();
+
+                    // SQL query to retrieve roles for a given user
+                    var sqlQuery = @"
+                SELECT r.RoleName
+                FROM Users u
+                JOIN UserRoles ur ON u.UserId = ur.UserId
+                JOIN Roles r ON ur.RoleId = r.RoleId
+                WHERE u.Username = @UserName;";
+
+                    // Execute the SQL query and retrieve roles
+                    var roles = await connection.QueryAsync<string>(sqlQuery, new { UserName = userName });
+
+                    // Access the roles from the returned UserWithRolesDto
+                    var rolesList = roles.ToList(); // Convert to a list if needed
+
+                    // Create UserWithRolesDto
+                    var userWithRolesDto = new UserWithRolesDto
+                    {
+                        UserName = userName,
+                        Roles = rolesList
+                    };
+
+                    return userWithRolesDto;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log unexpected exceptions
+                _logger.LogError($"Unexpected error while retrieving user roles: {ex.Message}");
+                // Rethrow the exception or handle it as appropriate for your application
+                throw;
+            }
         }
     }
 }
