@@ -4,7 +4,7 @@ namespace RecipeManagementWebAPI.Services
 {
     public interface IRecipeService
     {
-        Task<int> CreateRecipeAsync(CreateRecipeDto createRecipeDto);
+        Task<bool> CreateRecipeAsync(int userId,CreateRecipeDto createRecipeDto);
         Task<bool> DeleteRecipeAsync(int userId, int recipeId);
         Task<bool> UpdateRecipeAsync(int userId, UpdateRecipeDto updateRecipeDto);
         Task<IEnumerable<RecipeDto>> GetAllRecipesAsync();
