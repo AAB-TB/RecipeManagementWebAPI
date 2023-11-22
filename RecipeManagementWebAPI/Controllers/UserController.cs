@@ -94,7 +94,7 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
         [HttpGet("allUsers")]
-        [Authorize(Roles = "Admin,Customer")]
+        
         public async Task<IActionResult> GetAllUsers()
         {
             try

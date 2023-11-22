@@ -14,11 +14,22 @@ namespace RecipeManagementWebAPI.Repository
         public async Task Invoke(HttpContext context)
         {
             // Exclude the authentication path from role authorization
-            if (context.Request.Path.Equals("/api/user/login", StringComparison.OrdinalIgnoreCase)|| context.Request.Path.Equals("/api/user/Register", StringComparison.OrdinalIgnoreCase))
+            if (context.Request.Path.Equals("/api/user/login", StringComparison.OrdinalIgnoreCase) ||
+    context.Request.Path.Equals("/api/user/Register", StringComparison.OrdinalIgnoreCase) ||
+     context.Request.Path.Equals("/api/user/allUsers", StringComparison.OrdinalIgnoreCase) ||
+     context.Request.Path.Equals("/api/role/GetAllRoles", StringComparison.OrdinalIgnoreCase) ||
+     context.Request.Path.Equals("/api/recipe/allRecipes", StringComparison.OrdinalIgnoreCase) ||
+     context.Request.Path.Equals("/api/recipe/categories", StringComparison.OrdinalIgnoreCase) ||
+      context.Request.Path.Equals("/api/recipe/title", StringComparison.OrdinalIgnoreCase) ||
+      context.Request.Path.Equals("/api/recipe/search", StringComparison.OrdinalIgnoreCase) ||
+      context.Request.Path.Equals("/api/category/allCategories", StringComparison.OrdinalIgnoreCase) ||
+    context.Request.Path.Equals("/api/UserRole/GetAllUsersWithRoles", StringComparison.OrdinalIgnoreCase) ||
+    context.Request.Path.Equals("/api/UserRole/user-roles", StringComparison.OrdinalIgnoreCase))
             {
                 await _next.Invoke(context);
                 return;
             }
+
 
             var user = context.User;
 

@@ -71,7 +71,7 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
         [HttpGet("GetAllRoles")]
-        [Authorize(Roles = "Admin,Customer")]
+      
         public async Task<ActionResult<IEnumerable<RoleDto>>> GetAllRoles()
         {
             try

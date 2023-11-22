@@ -49,7 +49,6 @@ namespace RecipeManagementWebAPI.Controllers
         }
 
         [HttpGet("GetAllUsersWithRoles")]
-        [Authorize(Roles = "Admin,Customer")]
         public async Task<ActionResult<IEnumerable<UserRoleDto>>> GetAllUsersWithRoles()
         {
             try
@@ -87,8 +86,7 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
       
-        [HttpGet("user-roles/{userName}")]
-        [Authorize(Roles = "Admin,Customer")]
+        [HttpGet("user-roles")]
         public async Task<ActionResult<UserWithRolesDto>> GetUserRoles(string userName)
         {
             try

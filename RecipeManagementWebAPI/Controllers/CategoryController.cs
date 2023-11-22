@@ -44,8 +44,8 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin,Customer")]
+        [HttpGet("allCategories")]
+
         public async Task<IActionResult> GetAllCategories()
         {
             try

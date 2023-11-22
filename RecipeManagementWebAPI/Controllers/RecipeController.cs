@@ -79,8 +79,8 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
 
-        [HttpGet("all")]
-        [Authorize]
+        [HttpGet("allRecipes")]
+      
         public async Task<IActionResult> GetAllRecipes()
         {
             try
@@ -105,7 +105,7 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
         [HttpGet("categories")]
-        [Authorize]
+       
         public async Task<IActionResult> GetRecipesByCategories([FromQuery] IEnumerable<string> categories)
         {
             try
@@ -126,7 +126,8 @@ namespace RecipeManagementWebAPI.Controllers
             }
         }
 
-        [HttpGet("creator")]
+        [HttpGet("GetRecipesByCreatorName")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetRecipesByCreatorName([FromQuery] string creatorName)
         {
             try
