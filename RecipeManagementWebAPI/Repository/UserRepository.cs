@@ -48,18 +48,21 @@ namespace RecipeManagementWebAPI.Repository
                     // Hash the password before storing it
                     string hashedPassword = HashPassword(registrationDto.Password);
 
-                    // Example SQL query for user registration
-                    string sqlQuery = @"
-                INSERT INTO Users (Username, PasswordHash, Email)
-                VALUES (@Username, @PasswordHash, @Email);";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Username", registrationDto.Username);
+                    parameters.Add("@PasswordHash", hashedPassword);
+                    parameters.Add("@Email", registrationDto.Email);
 
-                    // Execute the query
-                    var affectedRows = await dbConnection.ExecuteAsync(sqlQuery, new
-                    {
-                        registrationDto.Username,
-                        PasswordHash = hashedPassword,
-                        registrationDto.Email
-                    });
+                    // Example SQL query for user registration
+                    string storedProcedure = "sp_UserRegistration";
+
+                    // Execute the stored procedure
+                    var affectedRows = await dbConnection.ExecuteAsync(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     // Log successful registration
                     _logger.LogInformation($"User '{registrationDto.Username}' registered successfully.");
@@ -104,31 +107,28 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     dbConnection.Open();
 
-                    // Modified SQL query with JOIN
-                    var user = await dbConnection.QueryFirstOrDefaultAsync<UserIdWithRoleNameDto>(
-                        @"SELECT
-                        Users.UserId,
-                        Users.Username,
-                        Users.PasswordHash,
-                        Roles.RoleName
-                  FROM
-                        Users
-                  JOIN
-                        UserRoles ON Users.UserId = UserRoles.UserId
-                  JOIN
-                        Roles ON UserRoles.RoleId = Roles.RoleId
-                  WHERE
-                        LOWER(Users.Username) = LOWER(@Username) AND Users.PasswordHash = @PasswordHash",
-                        new { Username = username, PasswordHash = hashedPassword });
+                    // Create DynamicParameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("Username", username);
+                    parameters.Add("PasswordHash", hashedPassword);
+                    parameters.Add("UserId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                    parameters.Add("RoleName", dbType: DbType.String, size: 20, direction: ParameterDirection.Output);
 
-                    if (user == null)
+                    // Execute the stored procedure
+                    await dbConnection.ExecuteAsync("sp_LoginUser", parameters, commandType: CommandType.StoredProcedure);
+
+                    // Retrieve output parameters
+                    int userId = parameters.Get<int>("UserId");
+                    string roleName = parameters.Get<string>("RoleName");
+
+                    if (userId == 0 || string.IsNullOrEmpty(roleName))
                     {
                         _logger.LogWarning("Invalid username or password.");
                         return null; // Invalid credentials
                     }
 
                     // User is valid, generate a token
-                    var token = GenerateToken(user.UserId, user.RoleName);
+                    var token = GenerateToken(userId, roleName);
 
                     return token;
                 }
@@ -188,21 +188,25 @@ namespace RecipeManagementWebAPI.Repository
                         return false; // Invalid old password or user not found
                     }
 
-                    // Update user information
-                    user.Username = updateUserDto.Username;
-                    user.PasswordHash = HashPassword(updateUserDto.NewPassword); // Hash the new password
-                    user.Email = updateUserDto.Email;
+                    // Hash the new password
+                    string hashedNewPassword = HashPassword(updateUserDto.NewPassword);
 
-                    // Perform the database update
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@UserId", userId);
+                    parameters.Add("@Username", updateUserDto.Username);
+                    parameters.Add("@PasswordHash", hashedNewPassword);
+                    parameters.Add("@Email", updateUserDto.Email);
+
+                    // Example SQL query for user update
+                    string storedProcedure = "sp_UserUpdate";
+
+                    // Execute the stored procedure
                     var affectedRows = await dbConnection.ExecuteAsync(
-                        "UPDATE Users SET Username = @Username, PasswordHash = @PasswordHash, Email = @Email WHERE UserId = @UserId",
-                        new
-                        {
-                            user.UserId,
-                            user.Username,
-                            user.PasswordHash,
-                            user.Email
-                        });
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     // Check if the update was successful
                     return affectedRows > 0;
@@ -233,10 +237,12 @@ namespace RecipeManagementWebAPI.Repository
                         return false; // User not found
                     }
 
-                    // Perform the database deletion
-                    var affectedRows = await dbConnection.ExecuteAsync(
-                        "DELETE FROM Users WHERE UserId = @UserId",
-                        new { UserId = userId });
+                    // Create DynamicParameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("UserId", userId);
+
+                    // Execute the stored procedure
+                    var affectedRows = await dbConnection.ExecuteAsync("sp_DeleteUser", parameters, commandType: CommandType.StoredProcedure);
 
                     // Check if the deletion was successful
                     return affectedRows > 0;
@@ -258,9 +264,17 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     dbConnection.Open();
 
-                    // Retrieve all users from the database
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+
+                    // Example SQL query for fetching all users
+                    string storedProcedure = "sp_GetAllUsers";
+
+                    // Execute the stored procedure
                     var users = await dbConnection.QueryAsync<UserInfoDto>(
-                        "SELECT UserId, Username, Email FROM Users");
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure);
 
                     return users;
                 }

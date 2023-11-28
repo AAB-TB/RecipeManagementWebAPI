@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using RecipeManagementWebAPI.Data;
 using RecipeManagementWebAPI.Dto.UserRole;
 using RecipeManagementWebAPI.Services;
+using System.Data;
 
 namespace RecipeManagementWebAPI.Repository
 {
@@ -28,29 +29,30 @@ namespace RecipeManagementWebAPI.Repository
       
         public async Task<bool> AssignRoleToUserAsync(int userId, int roleId)
         {
+
             try
             {
                 using (var connection = _dapperContext.GetDbConnection())
                 {
                     connection.Open();
 
-                    // Check if the role already exists for the user
-                    var roleExistsQuery = "SELECT COUNT(*) FROM UserRoles WHERE UserId = @UserId AND RoleId = @RoleId;";
+                    // Create DynamicParameters for role existence check
                     var roleExistsParameters = new { UserId = userId, RoleId = roleId };
-                    var roleExists = await connection.ExecuteScalarAsync<int>(roleExistsQuery, roleExistsParameters);
 
-                    if (roleExists > 0)
+                    // Execute the stored procedure to check if the role already exists
+                    var roleExists = await connection.QueryFirstOrDefaultAsync<int>("sp_AssignRoleToUser", roleExistsParameters, commandType: CommandType.StoredProcedure);
+
+                    if (roleExists == 0)
                     {
                         // The role already exists for the user
                         return false;
                     }
 
-                    // Insert a new record in the UserRoles table
-                    var insertUserRoleQuery = "INSERT INTO UserRoles (UserId, RoleId) VALUES (@UserId, @RoleId);";
+                    // Create DynamicParameters for inserting the role
                     var insertUserRoleParameters = new { UserId = userId, RoleId = roleId };
 
-                    // Execute the SQL query to insert the role for the user
-                    await connection.ExecuteAsync(insertUserRoleQuery, insertUserRoleParameters);
+                    // Execute the stored procedure to insert the role for the user
+                    await connection.ExecuteAsync("sp_AssignRoleToUser", insertUserRoleParameters, commandType: CommandType.StoredProcedure);
 
                     // Return true to indicate successful role assignment
                     return true;
@@ -73,14 +75,17 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     connection.Open();
 
-                    // SQL query to retrieve users with their roles
-                    var sqlQuery = "SELECT u.UserId, u.UserName,u.Email, r.RoleName " +
-                                   "FROM Users u " +
-                                   "LEFT JOIN UserRoles ur ON u.UserId = ur.UserId " +
-                                   "LEFT JOIN Roles r ON ur.RoleId = r.RoleId;";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
 
-                    // Execute the SQL query to fetch users with roles
-                    var usersWithRoles = await connection.QueryAsync<UserRoleDto>(sqlQuery);
+                    // Example SQL query for fetching all users with roles
+                    string storedProcedure = "sp_GetAllUsersWithRoles";
+
+                    // Execute the stored procedure
+                    var usersWithRoles = await connection.QueryAsync<UserRoleDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure);
 
                     return usersWithRoles;
                 }
@@ -102,9 +107,16 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     connection.Open();
 
-                    // Delete specified roles for the user
-                    var deleteQuery = "DELETE FROM UserRoles WHERE UserId = @UserId AND RoleId IN @RoleIds;";
-                    await connection.ExecuteAsync(deleteQuery, new { UserId = userId, RoleIds = roleIds });
+                    // Convert the list of role IDs to a comma-separated string
+                    var roleIdsString = string.Join(",", roleIds);
+
+                    // Create DynamicParameters for the stored procedure
+                    var parameters = new DynamicParameters();
+                    parameters.Add("UserId", userId);
+                    parameters.Add("RoleIdsString", roleIdsString);
+
+                    // Execute the stored procedure to remove roles for the user
+                    await connection.ExecuteAsync("sp_RemoveUserRoles", parameters, commandType: CommandType.StoredProcedure);
 
                     return true;
                 }
@@ -126,16 +138,16 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     connection.Open();
 
-                    // Delete existing roles for the user
-                    var deleteQuery = "DELETE FROM UserRoles WHERE UserId = @UserId;";
-                    await connection.ExecuteAsync(deleteQuery, new { UserId = userId });
+                    // Convert the list of role IDs to a comma-separated string
+                    var roleIdsString = string.Join(",", roleIds);
 
-                    // Insert new roles for the user
-                    var insertQuery = "INSERT INTO UserRoles (UserId, RoleId) VALUES (@UserId, @RoleId);";
-                    foreach (var roleId in roleIds)
-                    {
-                        await connection.ExecuteAsync(insertQuery, new { UserId = userId, RoleId = roleId });
-                    }
+                    // Create DynamicParameters for the stored procedure
+                    var parameters = new DynamicParameters();
+                    parameters.Add("UserId", userId);
+                    parameters.Add("RoleIdsString", roleIdsString);
+
+                    // Execute the stored procedure to update roles for the user
+                    await connection.ExecuteAsync("sp_UpdateUserRoles", parameters, commandType: CommandType.StoredProcedure);
 
                     return true;
                 }
@@ -157,16 +169,12 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     connection.Open();
 
-                    // SQL query to retrieve roles for a given user
-                    var sqlQuery = @"
-                SELECT r.RoleName
-                FROM Users u
-                JOIN UserRoles ur ON u.UserId = ur.UserId
-                JOIN Roles r ON ur.RoleId = r.RoleId
-                WHERE u.Username = @UserName;";
+                    // Create DynamicParameters for the stored procedure
+                    var parameters = new DynamicParameters();
+                    parameters.Add("UserName", userName);
 
-                    // Execute the SQL query and retrieve roles
-                    var roles = await connection.QueryAsync<string>(sqlQuery, new { UserName = userName });
+                    // Execute the stored procedure and retrieve roles
+                    var roles = await connection.QueryAsync<string>("sp_UserRolesCheck", parameters, commandType: CommandType.StoredProcedure);
 
                     // Access the roles from the returned UserWithRolesDto
                     var rolesList = roles.ToList(); // Convert to a list if needed

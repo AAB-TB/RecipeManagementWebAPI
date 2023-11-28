@@ -2,7 +2,7 @@
 {
     public class UpdateRecipeDto
     {
-        public int recipeId { get; set; }   
+        public int RecipeId { get; set; }   
         public string Title { get; set; }
         public string Description { get; set; }
         public string Ingredients { get; set; }

@@ -7554,3 +7554,686 @@ ClientConnectionId:de9fe3cd-ed6e-4b8f-b020-bb687de8e3b2
 2023-11-27 14:22:23.088 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI) in 4009.6377ms
 2023-11-27 14:22:23.089 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
 2023-11-27 14:22:23.091 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Category/allCategories - 200 null application/json; charset=utf-8 4130.1905ms
+2023-11-28 10:12:31.367 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:12:31.777 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:12:31.777 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:12:31.778 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:12:31.964 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:12:32.371 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 410.4098ms
+2023-11-28 10:12:32.393 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:12:32.398 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.4821ms
+2023-11-28 10:12:32.440 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:12:34.212 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1772.8531ms
+2023-11-28 10:12:34.242 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:12:34.375 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 133.0681ms
+2023-11-28 10:13:03.066 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:13:04.014 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:13:04.047 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:13:10.255 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:13:10.267 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 6213.8376ms
+2023-11-28 10:13:10.268 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:13:10.271 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 7205.3162ms
+2023-11-28 10:13:54.139 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Category - application/json 28
+2023-11-28 10:13:54.227 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:13:54.236 +01:00 [INF] Route matched with {action = "CreateCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCategory(RecipeManagementWebAPI.Dto.Category.CreateCategoryDto) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:13:54.324 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:13:54.325 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI) in 89.6506ms
+2023-11-28 10:13:54.326 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:13:54.326 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Category - 200 null text/plain; charset=utf-8 187.6398ms
+2023-11-28 10:14:14.395 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Category/allCategories - null null
+2023-11-28 10:14:14.402 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:14:14.410 +01:00 [INF] Route matched with {action = "GetAllCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:14:14.458 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Category.CategoryDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:14:14.461 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI) in 50.8552ms
+2023-11-28 10:14:14.461 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:14:14.461 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Category/allCategories - 200 null application/json; charset=utf-8 66.7653ms
+2023-11-28 10:14:29.791 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/5 - null null
+2023-11-28 10:14:29.795 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 10:14:29.804 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:14:29.837 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:14:29.839 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 34.0978ms
+2023-11-28 10:14:29.839 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 10:14:29.839 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/5 - 200 null text/plain; charset=utf-8 47.885ms
+2023-11-28 10:14:38.949 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Category/allCategories - null null
+2023-11-28 10:14:38.951 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:14:38.951 +01:00 [INF] Route matched with {action = "GetAllCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:14:38.962 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Category.CategoryDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:14:38.963 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI) in 11.806ms
+2023-11-28 10:14:38.963 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:14:38.964 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Category/allCategories - 200 null application/json; charset=utf-8 14.2983ms
+2023-11-28 10:15:49.079 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/Register - application/json 80
+2023-11-28 10:15:49.082 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.RegisterUser (RecipeManagementWebAPI)'
+2023-11-28 10:15:49.089 +01:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] RegisterUser(RecipeManagementWebAPI.Dto.User.UserRegistrationDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:15:49.149 +01:00 [INF] User 'Iver' registered successfully.
+2023-11-28 10:15:49.153 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2023-11-28 10:15:49.159 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.RegisterUser (RecipeManagementWebAPI) in 69.6144ms
+2023-11-28 10:15:49.159 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.RegisterUser (RecipeManagementWebAPI)'
+2023-11-28 10:15:49.159 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/Register - 200 null application/json; charset=utf-8 80.3693ms
+2023-11-28 10:17:21.460 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/User/allUsers - null null
+2023-11-28 10:17:21.463 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.GetAllUsers (RecipeManagementWebAPI)'
+2023-11-28 10:17:21.470 +01:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:17:21.487 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.User.UserInfoDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:17:21.488 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.GetAllUsers (RecipeManagementWebAPI) in 17.5085ms
+2023-11-28 10:17:21.488 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.GetAllUsers (RecipeManagementWebAPI)'
+2023-11-28 10:17:21.488 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/User/allUsers - 200 null application/json; charset=utf-8 29.1213ms
+2023-11-28 10:17:37.990 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/UserRole/GetAllUsersWithRoles - null null
+2023-11-28 10:17:37.991 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI)'
+2023-11-28 10:17:37.995 +01:00 [INF] Route matched with {action = "GetAllUsersWithRoles", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RecipeManagementWebAPI.Dto.UserRole.UserRoleDto]]] GetAllUsersWithRoles() on controller RecipeManagementWebAPI.Controllers.UserRoleController (RecipeManagementWebAPI).
+2023-11-28 10:17:38.010 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.UserRole.UserRoleDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:17:38.012 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI) in 17.0867ms
+2023-11-28 10:17:38.012 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI)'
+2023-11-28 10:17:38.012 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/UserRole/GetAllUsersWithRoles - 200 null application/json; charset=utf-8 22.0172ms
+2023-11-28 10:18:15.205 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/UserRole/AssignRoleToUser - application/json 32
+2023-11-28 10:18:15.208 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.AssignRoleToUser (RecipeManagementWebAPI)'
+2023-11-28 10:18:15.212 +01:00 [INF] Route matched with {action = "AssignRoleToUser", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Boolean]] AssignRoleToUser(RecipeManagementWebAPI.Dto.UserRole.AssignRoleDto) on controller RecipeManagementWebAPI.Controllers.UserRoleController (RecipeManagementWebAPI).
+2023-11-28 10:18:15.254 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2023-11-28 10:18:15.254 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserRoleController.AssignRoleToUser (RecipeManagementWebAPI) in 42.3642ms
+2023-11-28 10:18:15.254 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.AssignRoleToUser (RecipeManagementWebAPI)'
+2023-11-28 10:18:15.254 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/UserRole/AssignRoleToUser - 200 null application/json; charset=utf-8 49.3164ms
+2023-11-28 10:18:31.415 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/UserRole/user-roles?userName=4 - null null
+2023-11-28 10:18:31.416 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:31.418 +01:00 [INF] Route matched with {action = "GetUserRoles", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeManagementWebAPI.Dto.UserRole.UserWithRolesDto]] GetUserRoles(System.String) on controller RecipeManagementWebAPI.Controllers.UserRoleController (RecipeManagementWebAPI).
+2023-11-28 10:18:31.438 +01:00 [INF] Executing OkObjectResult, writing value of type 'RecipeManagementWebAPI.Dto.UserRole.UserWithRolesDto'.
+2023-11-28 10:18:31.439 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI) in 20.6932ms
+2023-11-28 10:18:31.439 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:31.439 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/UserRole/user-roles?userName=4 - 200 null application/json; charset=utf-8 24.7462ms
+2023-11-28 10:18:41.073 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/UserRole/GetAllUsersWithRoles - null null
+2023-11-28 10:18:41.074 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:41.074 +01:00 [INF] Route matched with {action = "GetAllUsersWithRoles", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RecipeManagementWebAPI.Dto.UserRole.UserRoleDto]]] GetAllUsersWithRoles() on controller RecipeManagementWebAPI.Controllers.UserRoleController (RecipeManagementWebAPI).
+2023-11-28 10:18:41.084 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.UserRole.UserRoleDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:18:41.084 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI) in 9.9723ms
+2023-11-28 10:18:41.084 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetAllUsersWithRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:41.084 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/UserRole/GetAllUsersWithRoles - 200 null application/json; charset=utf-8 11.0612ms
+2023-11-28 10:18:58.484 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/UserRole/user-roles?userName=iver - null null
+2023-11-28 10:18:58.484 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:58.484 +01:00 [INF] Route matched with {action = "GetUserRoles", controller = "UserRole"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeManagementWebAPI.Dto.UserRole.UserWithRolesDto]] GetUserRoles(System.String) on controller RecipeManagementWebAPI.Controllers.UserRoleController (RecipeManagementWebAPI).
+2023-11-28 10:18:58.498 +01:00 [INF] Executing OkObjectResult, writing value of type 'RecipeManagementWebAPI.Dto.UserRole.UserWithRolesDto'.
+2023-11-28 10:18:58.498 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI) in 13.4927ms
+2023-11-28 10:18:58.498 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserRoleController.GetUserRoles (RecipeManagementWebAPI)'
+2023-11-28 10:18:58.499 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/UserRole/user-roles?userName=iver - 200 null application/json; charset=utf-8 15.1803ms
+2023-11-28 10:19:08.171 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Role/GetAllRoles - null null
+2023-11-28 10:19:08.173 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RoleController.GetAllRoles (RecipeManagementWebAPI)'
+2023-11-28 10:19:08.175 +01:00 [INF] Route matched with {action = "GetAllRoles", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RecipeManagementWebAPI.Dto.Role.RoleDto]]] GetAllRoles() on controller RecipeManagementWebAPI.Controllers.RoleController (RecipeManagementWebAPI).
+2023-11-28 10:19:08.195 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Role.RoleDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:19:08.196 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RoleController.GetAllRoles (RecipeManagementWebAPI) in 20.9142ms
+2023-11-28 10:19:08.196 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RoleController.GetAllRoles (RecipeManagementWebAPI)'
+2023-11-28 10:19:08.196 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Role/GetAllRoles - 200 null application/json; charset=utf-8 25.0609ms
+2023-11-28 10:20:17.627 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 105
+2023-11-28 10:20:17.629 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:20:17.632 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:20:17.791 +01:00 [ERR] Error creating recipe: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Recipes_Categories". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Categories", column 'CategoryId'.
+The statement has been terminated.
+2023-11-28 10:20:17.837 +01:00 [ERR] Error creating recipe: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Recipes_Categories". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Categories", column 'CategoryId'.
+The statement has been terminated.
+2023-11-28 10:20:17.837 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-11-28 10:20:17.838 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 205.5748ms
+2023-11-28 10:20:17.838 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:20:17.838 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 500 null text/plain; charset=utf-8 211.4631ms
+2023-11-28 10:22:36.788 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:22:36.925 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:22:36.929 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:22:36.929 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:22:36.952 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:22:37.107 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 158.1925ms
+2023-11-28 10:22:37.144 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:22:37.150 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.2734ms
+2023-11-28 10:22:37.171 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:22:37.205 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.6521ms
+2023-11-28 10:22:37.427 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:22:37.513 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 84.597ms
+2023-11-28 10:23:23.086 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:23:23.225 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:23:23.244 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:23:27.270 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:23:27.278 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4030.0993ms
+2023-11-28 10:23:27.279 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:23:31.486 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 8400.6138ms
+2023-11-28 10:24:28.071 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 112
+2023-11-28 10:24:34.787 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:24:34.790 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:29:21.643 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:29:21.775 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:29:21.788 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:29:21.788 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:29:21.839 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:29:21.991 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 156.0108ms
+2023-11-28 10:29:22.015 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:29:22.018 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.5116ms
+2023-11-28 10:29:22.049 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:29:22.081 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.7143ms
+2023-11-28 10:29:22.236 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:29:22.304 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 67.9563ms
+2023-11-28 10:29:45.462 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:29:45.519 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:29:45.533 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:29:49.026 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:29:49.030 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 3495.8794ms
+2023-11-28 10:29:49.031 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:29:49.032 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 3569.9097ms
+2023-11-28 10:30:16.100 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Category - application/json 33
+2023-11-28 10:30:16.130 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:30:16.132 +01:00 [INF] Route matched with {action = "CreateCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCategory(RecipeManagementWebAPI.Dto.Category.CreateCategoryDto) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:30:16.192 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:30:16.193 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI) in 60.312ms
+2023-11-28 10:30:16.193 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:30:16.194 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Category - 200 null text/plain; charset=utf-8 93.6522ms
+2023-11-28 10:30:26.862 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Category/allCategories - null null
+2023-11-28 10:30:26.866 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:30:26.871 +01:00 [INF] Route matched with {action = "GetAllCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:30:26.894 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Category.CategoryDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:30:26.895 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI) in 23.199ms
+2023-11-28 10:30:26.895 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:30:26.895 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Category/allCategories - 200 null application/json; charset=utf-8 33.6719ms
+2023-11-28 10:31:03.742 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 111
+2023-11-28 10:31:03.744 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:31:03.746 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:31:03.766 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:31:03.767 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 20.7158ms
+2023-11-28 10:31:03.767 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:31:03.767 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 24.7203ms
+2023-11-28 10:32:35.579 +01:00 [INF] Request starting HTTP/2 PUT https://localhost:44362/api/Recipe - application/json 127
+2023-11-28 10:32:35.582 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.UpdateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:32:35.589 +01:00 [INF] Route matched with {action = "UpdateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateRecipe(RecipeManagementWebAPI.Dto.Recipe.UpdateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:32:35.651 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:32:35.653 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.UpdateRecipe (RecipeManagementWebAPI) in 62.9804ms
+2023-11-28 10:32:35.653 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.UpdateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:32:35.654 +01:00 [INF] Request finished HTTP/2 PUT https://localhost:44362/api/Recipe - 200 null text/plain; charset=utf-8 74.5997ms
+2023-11-28 10:32:42.959 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 10:32:42.962 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:32:42.968 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:32:42.989 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:32:43.002 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 33.2329ms
+2023-11-28 10:32:43.002 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:32:43.002 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 43.7336ms
+2023-11-28 10:33:36.107 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/categories?categories=soft%20drink - null null
+2023-11-28 10:33:36.108 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI)'
+2023-11-28 10:33:36.122 +01:00 [INF] Route matched with {action = "GetRecipesByCategories", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByCategories(System.Collections.Generic.IEnumerable`1[System.String]) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:33:36.164 +01:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-11-28 10:33:36.166 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI) in 44.1603ms
+2023-11-28 10:33:36.166 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI)'
+2023-11-28 10:33:36.167 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/categories?categories=soft%20drink - 404 null text/plain; charset=utf-8 60.4907ms
+2023-11-28 10:34:02.714 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/categories?categories=softdrink - null null
+2023-11-28 10:34:02.719 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI)'
+2023-11-28 10:34:02.721 +01:00 [INF] Route matched with {action = "GetRecipesByCategories", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByCategories(System.Collections.Generic.IEnumerable`1[System.String]) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:34:02.737 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:34:02.738 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI) in 16.841ms
+2023-11-28 10:34:02.738 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCategories (RecipeManagementWebAPI)'
+2023-11-28 10:34:02.738 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/categories?categories=softdrink - 200 null application/json; charset=utf-8 24.3662ms
+2023-11-28 10:34:24.875 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/GetRecipesByCreatorName?creatorName=alvin - null null
+2023-11-28 10:34:24.876 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCreatorName (RecipeManagementWebAPI)'
+2023-11-28 10:34:24.888 +01:00 [INF] Route matched with {action = "GetRecipesByCreatorName", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByCreatorName(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:34:24.906 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:34:24.907 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCreatorName (RecipeManagementWebAPI) in 18.1887ms
+2023-11-28 10:34:24.907 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByCreatorName (RecipeManagementWebAPI)'
+2023-11-28 10:34:24.908 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/GetRecipesByCreatorName?creatorName=alvin - 200 null application/json; charset=utf-8 32.8993ms
+2023-11-28 10:34:45.900 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - null null
+2023-11-28 10:34:45.901 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:45.906 +01:00 [INF] Route matched with {action = "GetRecipesByTitle", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByTitle(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:34:45.924 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:34:45.925 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI) in 18.4492ms
+2023-11-28 10:34:45.925 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:45.925 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - 200 null application/json; charset=utf-8 25.526ms
+2023-11-28 10:34:51.692 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cock - null null
+2023-11-28 10:34:51.693 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:51.693 +01:00 [INF] Route matched with {action = "GetRecipesByTitle", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByTitle(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:34:51.704 +01:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-11-28 10:34:51.705 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI) in 12.118ms
+2023-11-28 10:34:51.705 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:51.706 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cock - 404 null text/plain; charset=utf-8 13.6539ms
+2023-11-28 10:34:59.776 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - null null
+2023-11-28 10:34:59.777 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:59.777 +01:00 [INF] Route matched with {action = "GetRecipesByTitle", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByTitle(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:34:59.788 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:34:59.789 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI) in 11.6116ms
+2023-11-28 10:34:59.789 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:34:59.789 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - 200 null application/json; charset=utf-8 12.9366ms
+2023-11-28 10:35:11.577 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - null null
+2023-11-28 10:35:11.579 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:35:11.580 +01:00 [INF] Route matched with {action = "GetRecipesByTitle", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByTitle(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:35:11.591 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:35:11.591 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI) in 11.5988ms
+2023-11-28 10:35:11.592 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:35:11.592 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/title?title=cocktail - 200 null application/json; charset=utf-8 14.9191ms
+2023-11-28 10:35:17.580 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/title?title=coc - null null
+2023-11-28 10:35:17.581 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:35:17.582 +01:00 [INF] Route matched with {action = "GetRecipesByTitle", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipesByTitle(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:35:17.592 +01:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-11-28 10:35:17.593 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI) in 11.2198ms
+2023-11-28 10:35:17.593 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetRecipesByTitle (RecipeManagementWebAPI)'
+2023-11-28 10:35:17.593 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/title?title=coc - 404 null text/plain; charset=utf-8 12.8947ms
+2023-11-28 10:35:29.777 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/search?partialTitle=cock - null null
+2023-11-28 10:35:29.778 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.SearchRecipesByPartial (RecipeManagementWebAPI)'
+2023-11-28 10:35:29.783 +01:00 [INF] Route matched with {action = "SearchRecipesByPartial", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchRecipesByPartial(System.String) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:35:29.802 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:35:29.803 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.SearchRecipesByPartial (RecipeManagementWebAPI) in 18.8683ms
+2023-11-28 10:35:29.803 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.SearchRecipesByPartial (RecipeManagementWebAPI)'
+2023-11-28 10:35:29.803 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/search?partialTitle=cock - 200 null application/json; charset=utf-8 26.1814ms
+2023-11-28 10:36:21.310 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Rating/rate - application/json 54
+2023-11-28 10:36:21.311 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:36:21.314 +01:00 [INF] Route matched with {action = "RateRecipe", controller = "Rating"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RateRecipe(RecipeManagementWebAPI.Dto.Rating.RatingDto) on controller RecipeManagementWebAPI.Controllers.RatingController (RecipeManagementWebAPI).
+2023-11-28 10:36:21.367 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-11-28 10:36:21.372 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI) in 57.7981ms
+2023-11-28 10:36:21.372 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:36:21.372 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Rating/rate - 400 null text/plain; charset=utf-8 62.6738ms
+2023-11-28 10:36:46.869 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 47
+2023-11-28 10:36:46.871 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:36:46.872 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:36:46.884 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:36:46.885 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 12.5982ms
+2023-11-28 10:36:46.885 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:36:46.885 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 15.716ms
+2023-11-28 10:37:28.620 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Rating/rate - application/json 54
+2023-11-28 10:37:28.621 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:37:28.621 +01:00 [INF] Route matched with {action = "RateRecipe", controller = "Rating"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RateRecipe(RecipeManagementWebAPI.Dto.Rating.RatingDto) on controller RecipeManagementWebAPI.Controllers.RatingController (RecipeManagementWebAPI).
+2023-11-28 10:37:28.641 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:37:28.642 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI) in 20.8083ms
+2023-11-28 10:37:28.642 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:37:28.642 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Rating/rate - 200 null text/plain; charset=utf-8 22.2081ms
+2023-11-28 10:37:43.777 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 10:37:43.778 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:37:43.778 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:37:43.790 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:37:43.790 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 12.3311ms
+2023-11-28 10:37:43.791 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:37:43.791 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 13.4737ms
+2023-11-28 10:38:31.015 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Rating/rate - application/json 54
+2023-11-28 10:38:31.016 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:38:31.016 +01:00 [INF] Route matched with {action = "RateRecipe", controller = "Rating"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RateRecipe(RecipeManagementWebAPI.Dto.Rating.RatingDto) on controller RecipeManagementWebAPI.Controllers.RatingController (RecipeManagementWebAPI).
+2023-11-28 10:38:31.028 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-11-28 10:38:31.033 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI) in 16.7169ms
+2023-11-28 10:38:31.033 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:38:31.034 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Rating/rate - 400 null text/plain; charset=utf-8 18.6144ms
+2023-11-28 10:39:13.907 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 54
+2023-11-28 10:39:13.907 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:39:13.908 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:39:13.921 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:39:13.923 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 15.0347ms
+2023-11-28 10:39:13.923 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:39:13.923 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 16.6414ms
+2023-11-28 10:40:15.825 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Rating/rate - application/json 54
+2023-11-28 10:40:15.831 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:40:15.831 +01:00 [INF] Route matched with {action = "RateRecipe", controller = "Rating"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RateRecipe(RecipeManagementWebAPI.Dto.Rating.RatingDto) on controller RecipeManagementWebAPI.Controllers.RatingController (RecipeManagementWebAPI).
+2023-11-28 10:40:15.879 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:40:15.880 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI) in 49.0306ms
+2023-11-28 10:40:15.880 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:40:15.881 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Rating/rate - 200 null text/plain; charset=utf-8 56.0405ms
+2023-11-28 10:40:45.718 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 10:40:45.719 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:40:45.719 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:40:45.732 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:40:45.739 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 19.7403ms
+2023-11-28 10:40:45.739 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:40:45.740 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 21.7586ms
+2023-11-28 10:41:54.832 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - null null
+2023-11-28 10:41:54.833 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2023-11-28 10:41:54.835 +01:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2023-11-28 10:41:54.836 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - 403 null null 4.2761ms
+2023-11-28 10:42:16.643 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:42:16.644 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:42:16.644 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:42:16.659 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:42:16.665 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 20.3701ms
+2023-11-28 10:42:16.665 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:42:16.665 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 21.6873ms
+2023-11-28 10:42:31.896 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - null null
+2023-11-28 10:42:31.901 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:42:31.906 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:42:32.060 +01:00 [ERR] Error deleting recipe: The DELETE statement conflicted with the REFERENCE constraint "FK_Ratings_Recipes". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Ratings", column 'RecipeId'.
+The statement has been terminated.
+2023-11-28 10:42:32.116 +01:00 [ERR] Error deleting recipe: The DELETE statement conflicted with the REFERENCE constraint "FK_Ratings_Recipes". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Ratings", column 'RecipeId'.
+The statement has been terminated.
+2023-11-28 10:42:32.117 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-11-28 10:42:32.117 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI) in 211.3617ms
+2023-11-28 10:42:32.117 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:42:32.117 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - 500 null text/plain; charset=utf-8 221.2207ms
+2023-11-28 10:43:25.911 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:43:26.039 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:43:26.043 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:43:26.043 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:43:26.060 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:43:26.202 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 144.2727ms
+2023-11-28 10:43:26.235 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:43:26.242 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.9574ms
+2023-11-28 10:43:26.279 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:43:26.315 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.1989ms
+2023-11-28 10:43:26.452 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:43:26.518 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.1678ms
+2023-11-28 10:43:52.914 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:43:53.026 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:43:53.050 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:43:57.223 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:43:57.237 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4180.7054ms
+2023-11-28 10:43:57.238 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:43:57.241 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4327.0242ms
+2023-11-28 10:44:13.827 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - null null
+2023-11-28 10:44:13.881 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:44:13.888 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:47:16.835 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:47:16.983 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:47:16.988 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:47:16.988 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:47:17.008 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:47:17.150 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 145.5644ms
+2023-11-28 10:47:17.166 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:47:17.172 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 2.6099ms
+2023-11-28 10:47:17.212 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:47:17.240 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.4196ms
+2023-11-28 10:47:17.383 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:47:17.446 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.1431ms
+2023-11-28 10:47:52.132 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:47:52.282 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:47:52.302 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:47:56.186 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:47:56.196 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 3890.3091ms
+2023-11-28 10:47:56.197 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:47:56.199 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4067.0307ms
+2023-11-28 10:48:28.956 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/6 - null null
+2023-11-28 10:48:28.992 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 10:48:28.995 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:48:29.053 +01:00 [ERR] Error deleting category: The DELETE statement conflicted with the REFERENCE constraint "FK_Recipes_Categories". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Recipes", column 'CategoryId'.
+The statement has been terminated.
+2023-11-28 10:48:29.098 +01:00 [ERR] Error deleting category: The DELETE statement conflicted with the REFERENCE constraint "FK_Recipes_Categories". The conflict occurred in database "RecipeManagmentWebApi", table "dbo.Recipes", column 'CategoryId'.
+The statement has been terminated.
+2023-11-28 10:48:29.098 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-11-28 10:48:29.099 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 104.0786ms
+2023-11-28 10:48:29.099 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 10:48:29.099 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/6 - 500 null text/plain; charset=utf-8 143.8064ms
+2023-11-28 10:49:16.607 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - null null
+2023-11-28 10:49:16.611 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:49:16.614 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:49:16.693 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-11-28 10:49:16.694 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI) in 79.341ms
+2023-11-28 10:49:16.694 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:49:16.694 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/7 - 204 null null 87.4523ms
+2023-11-28 10:57:13.863 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 10:57:13.988 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 10:57:13.989 +01:00 [INF] Hosting environment: Development
+2023-11-28 10:57:13.989 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 10:57:14.018 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 10:57:14.178 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 163.8203ms
+2023-11-28 10:57:14.204 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 10:57:14.208 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.1379ms
+2023-11-28 10:57:14.243 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 10:57:14.281 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.3031ms
+2023-11-28 10:57:14.441 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 10:57:14.514 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.9883ms
+2023-11-28 10:57:35.576 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 10:57:35.673 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:57:35.707 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 10:57:40.354 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 10:57:40.365 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4653.2705ms
+2023-11-28 10:57:40.366 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 10:57:40.368 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4792.5279ms
+2023-11-28 10:58:10.446 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Category - application/json 30
+2023-11-28 10:58:10.533 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:58:10.538 +01:00 [INF] Route matched with {action = "CreateCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCategory(RecipeManagementWebAPI.Dto.Category.CreateCategoryDto) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:58:10.606 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:58:10.608 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI) in 69.9082ms
+2023-11-28 10:58:10.608 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.CreateCategory (RecipeManagementWebAPI)'
+2023-11-28 10:58:10.608 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Category - 200 null text/plain; charset=utf-8 162.1206ms
+2023-11-28 10:58:16.284 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Category/allCategories - null null
+2023-11-28 10:58:16.290 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:58:16.294 +01:00 [INF] Route matched with {action = "GetAllCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 10:58:16.338 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Category.CategoryDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:58:16.340 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI) in 46.1931ms
+2023-11-28 10:58:16.340 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.GetAllCategories (RecipeManagementWebAPI)'
+2023-11-28 10:58:16.341 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Category/allCategories - 200 null application/json; charset=utf-8 56.7462ms
+2023-11-28 10:58:46.371 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 10:58:46.373 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:58:46.378 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:58:46.398 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:58:46.412 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 33.8894ms
+2023-11-28 10:58:46.412 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:58:46.413 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 41.4297ms
+2023-11-28 10:59:29.373 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 102
+2023-11-28 10:59:29.379 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:59:29.397 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:59:29.453 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 10:59:29.455 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 57.4942ms
+2023-11-28 10:59:29.455 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 10:59:29.456 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 82.8499ms
+2023-11-28 10:59:37.430 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 10:59:37.431 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:59:37.431 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 10:59:37.442 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 10:59:37.443 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 12.0839ms
+2023-11-28 10:59:37.443 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 10:59:37.444 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 13.9786ms
+2023-11-28 11:00:29.652 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/7 - null null
+2023-11-28 11:00:29.655 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:00:29.662 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 11:00:29.741 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:00:29.742 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 79.5498ms
+2023-11-28 11:00:29.743 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:00:29.743 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/7 - 200 null text/plain; charset=utf-8 90.8752ms
+2023-11-28 11:01:22.992 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/8 - null null
+2023-11-28 11:01:22.993 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:01:22.998 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:01:23.045 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-11-28 11:01:23.045 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI) in 46.7391ms
+2023-11-28 11:01:23.045 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:01:23.047 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/8 - 204 null null 55.3701ms
+2023-11-28 11:02:34.289 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 102
+2023-11-28 11:02:34.290 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:02:34.290 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:02:34.333 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:02:34.334 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 43.4709ms
+2023-11-28 11:02:34.334 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:02:34.335 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 45.5705ms
+2023-11-28 11:02:58.586 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 103
+2023-11-28 11:02:58.588 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:02:58.589 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:02:58.606 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:02:58.607 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 17.8528ms
+2023-11-28 11:02:58.607 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:02:58.607 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 21.5223ms
+2023-11-28 11:04:05.801 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:04:05.914 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:04:05.915 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:04:05.920 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:04:05.944 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:04:06.104 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 162.8844ms
+2023-11-28 11:04:06.125 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:04:06.131 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.3758ms
+2023-11-28 11:04:06.179 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:04:06.210 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.2262ms
+2023-11-28 11:04:06.414 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:04:06.487 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.0807ms
+2023-11-28 11:04:30.054 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 11:04:30.159 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:04:30.180 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:04:34.615 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:04:34.626 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4440.2401ms
+2023-11-28 11:04:34.627 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:04:34.630 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4575.4886ms
+2023-11-28 11:05:11.681 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/10 - null null
+2023-11-28 11:05:11.730 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:05:11.732 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:14:54.028 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:14:54.134 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:14:54.138 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:14:54.138 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:14:54.163 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:14:54.302 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 142.9003ms
+2023-11-28 11:14:54.335 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:14:54.338 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 2.1174ms
+2023-11-28 11:14:54.369 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:14:54.397 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.5586ms
+2023-11-28 11:14:54.545 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:14:54.610 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.6806ms
+2023-11-28 11:15:17.229 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:15:17.359 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:15:17.363 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:15:17.363 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:15:17.384 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:15:17.565 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 182.0048ms
+2023-11-28 11:15:17.583 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:15:17.587 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 3.9478ms
+2023-11-28 11:15:17.684 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:15:17.714 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.0816ms
+2023-11-28 11:15:18.145 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:15:18.216 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 71.4198ms
+2023-11-28 11:15:38.999 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 11:15:39.164 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:15:39.190 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:15:44.127 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:15:44.136 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4941.5743ms
+2023-11-28 11:15:44.137 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:15:44.140 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 5140.3559ms
+2023-11-28 11:16:00.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 11:16:01.042 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:16:01.050 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:16:01.140 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 11:16:01.150 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 99.2164ms
+2023-11-28 11:16:01.150 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:16:01.151 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 173.796ms
+2023-11-28 11:16:20.915 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 108
+2023-11-28 11:16:20.926 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:16:20.930 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:16:20.981 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:16:20.984 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 53.6763ms
+2023-11-28 11:16:20.984 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:16:20.984 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 69.3882ms
+2023-11-28 11:16:27.813 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 11:16:27.815 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:16:27.816 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:16:27.829 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 11:16:27.831 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 15.1736ms
+2023-11-28 11:16:27.831 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:16:27.832 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 18.4483ms
+2023-11-28 11:16:40.636 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/11 - null null
+2023-11-28 11:16:40.638 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:16:40.646 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:17:42.173 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-11-28 11:17:42.174 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI) in 61527.3452ms
+2023-11-28 11:17:42.174 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:17:46.606 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/11 - 204 null null 65969.4774ms
+2023-11-28 11:20:25.584 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:20:25.733 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:20:25.741 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:20:25.742 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:20:25.778 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:20:25.942 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 167.7959ms
+2023-11-28 11:20:26.001 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:20:26.009 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 7.0004ms
+2023-11-28 11:20:26.073 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:20:26.101 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.8801ms
+2023-11-28 11:20:26.494 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:20:26.585 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.769ms
+2023-11-28 11:20:50.615 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 11:20:50.715 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:20:50.738 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:20:55.242 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:20:55.250 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4508.447ms
+2023-11-28 11:20:55.250 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:20:55.252 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4637.1323ms
+2023-11-28 11:21:17.973 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 11:21:18.056 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:21:18.065 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:21:18.166 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 11:21:18.178 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 113.0856ms
+2023-11-28 11:21:18.179 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:21:18.179 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 205.9943ms
+2023-11-28 11:21:31.868 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Recipe/9 - null null
+2023-11-28 11:21:31.882 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:21:31.889 +01:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:21:53.672 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:21:53.673 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI) in 21783.0048ms
+2023-11-28 11:21:53.673 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.DeleteRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:21:55.394 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Recipe/9 - 200 null text/plain; charset=utf-8 23530.6372ms
+2023-11-28 11:22:15.946 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 11:22:15.947 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:22:15.948 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:22:15.960 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 11:22:15.961 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 12.8684ms
+2023-11-28 11:22:15.961 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:22:15.961 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 15.0177ms
+2023-11-28 11:22:31.132 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - application/json 96
+2023-11-28 11:22:31.136 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:22:31.142 +01:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeManagementWebAPI.Dto.Recipe.CreateRecipeDto) on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:22:31.168 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:22:31.169 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI) in 26.7372ms
+2023-11-28 11:22:31.169 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.CreateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:22:31.169 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Recipe/create-recipe - 200 null text/plain; charset=utf-8 37.1902ms
+2023-11-28 11:23:03.226 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 47
+2023-11-28 11:23:35.322 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:23:35.446 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:23:35.450 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:23:35.450 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:23:35.470 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:23:35.626 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 162.1535ms
+2023-11-28 11:23:35.644 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:23:35.647 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 2.4998ms
+2023-11-28 11:23:35.741 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:23:35.816 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.3126ms
+2023-11-28 11:23:36.192 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:23:36.259 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 67.7094ms
+2023-11-28 11:23:45.198 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 47
+2023-11-28 11:23:45.295 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:23:45.316 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:23:49.309 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:23:49.324 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4002.462ms
+2023-11-28 11:23:49.325 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:23:49.327 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4129.3025ms
+2023-11-28 11:24:58.479 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/Rating/rate - application/json 55
+2023-11-28 11:24:58.562 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:24:58.567 +01:00 [INF] Route matched with {action = "RateRecipe", controller = "Rating"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RateRecipe(RecipeManagementWebAPI.Dto.Rating.RatingDto) on controller RecipeManagementWebAPI.Controllers.RatingController (RecipeManagementWebAPI).
+2023-11-28 11:24:58.628 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:24:58.630 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI) in 62.4391ms
+2023-11-28 11:24:58.630 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RatingController.RateRecipe (RecipeManagementWebAPI)'
+2023-11-28 11:24:58.630 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/Rating/rate - 200 null text/plain; charset=utf-8 151.6531ms
+2023-11-28 11:25:06.062 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - null null
+2023-11-28 11:25:06.069 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:25:06.079 +01:00 [INF] Route matched with {action = "GetAllRecipes", controller = "Recipe"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRecipes() on controller RecipeManagementWebAPI.Controllers.RecipeController (RecipeManagementWebAPI).
+2023-11-28 11:25:06.126 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RecipeManagementWebAPI.Dto.Recipe.RecipeDto, RecipeManagementWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-28 11:25:06.138 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI) in 59.2246ms
+2023-11-28 11:25:06.139 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.RecipeController.GetAllRecipes (RecipeManagementWebAPI)'
+2023-11-28 11:25:06.139 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/api/Recipe/allRecipes - 200 null application/json; charset=utf-8 76.9401ms
+2023-11-28 11:25:37.805 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 11:25:37.808 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:25:37.808 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:25:38.143 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:25:38.145 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 336.7793ms
+2023-11-28 11:25:38.146 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:25:38.147 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 341.2704ms
+2023-11-28 11:26:15.937 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/6 - null null
+2023-11-28 11:26:15.939 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:26:15.953 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 11:26:15.970 +01:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-11-28 11:26:15.971 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 17.479ms
+2023-11-28 11:26:15.971 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:26:15.971 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/6 - 404 null text/plain; charset=utf-8 34.6694ms
+2023-11-28 11:27:29.797 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/6 - null null
+2023-11-28 11:27:29.801 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:27:29.801 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 11:29:03.634 +01:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-11-28 11:29:03.634 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 93833.1517ms
+2023-11-28 11:29:03.634 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:29:05.298 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/6 - 404 null text/plain; charset=utf-8 95501.1854ms
+2023-11-28 11:33:27.059 +01:00 [INF] User profile is available. Using 'C:\Users\alvin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-28 11:33:27.228 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-28 11:33:27.229 +01:00 [INF] Hosting environment: Development
+2023-11-28 11:33:27.229 +01:00 [INF] Content root path: D:\Visual Studio c#\Asp.net core API\RecipeManagementWebAPI\RecipeManagementWebAPI
+2023-11-28 11:33:27.259 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/index.html - null null
+2023-11-28 11:33:27.424 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/index.html - 200 null text/html;charset=utf-8 167.2526ms
+2023-11-28 11:33:27.444 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - null null
+2023-11-28 11:33:27.453 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.7316ms
+2023-11-28 11:33:27.548 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/_vs/browserLink - null null
+2023-11-28 11:33:27.596 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.4505ms
+2023-11-28 11:33:27.997 +01:00 [INF] Request starting HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - null null
+2023-11-28 11:33:28.074 +01:00 [INF] Request finished HTTP/2 GET https://localhost:44362/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.8351ms
+2023-11-28 11:33:53.288 +01:00 [INF] Request starting HTTP/2 POST https://localhost:44362/api/User/login - application/json 52
+2023-11-28 11:33:53.353 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:33:53.363 +01:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(RecipeManagementWebAPI.Dto.Login.LoginRequestDto) on controller RecipeManagementWebAPI.Controllers.UserController (RecipeManagementWebAPI).
+2023-11-28 11:33:57.400 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-28 11:33:57.404 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI) in 4039.0174ms
+2023-11-28 11:33:57.404 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.UserController.Login (RecipeManagementWebAPI)'
+2023-11-28 11:33:57.405 +01:00 [INF] Request finished HTTP/2 POST https://localhost:44362/api/User/login - 200 null application/json; charset=utf-8 4117.6829ms
+2023-11-28 11:34:28.087 +01:00 [INF] Request starting HTTP/2 DELETE https://localhost:44362/api/Category/6 - null null
+2023-11-28 11:34:28.131 +01:00 [INF] Executing endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:34:28.137 +01:00 [INF] Route matched with {action = "DeleteCategory", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(Int32) on controller RecipeManagementWebAPI.Controllers.CategoryController (RecipeManagementWebAPI).
+2023-11-28 11:34:28.196 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-28 11:34:28.197 +01:00 [INF] Executed action RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI) in 60.6482ms
+2023-11-28 11:34:28.198 +01:00 [INF] Executed endpoint 'RecipeManagementWebAPI.Controllers.CategoryController.DeleteCategory (RecipeManagementWebAPI)'
+2023-11-28 11:34:28.199 +01:00 [INF] Request finished HTTP/2 DELETE https://localhost:44362/api/Category/6 - 200 null text/plain; charset=utf-8 113.0559ms

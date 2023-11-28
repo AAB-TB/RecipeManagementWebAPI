@@ -31,54 +31,35 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Ensure the rating value is between 1 and 5
-                if (ratingValue < 1 || ratingValue > 5)
-                {
-                    // Handle invalid rating value
-                    return false;
-                }
-
-                // Use Dapper connection for SQL queries
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // Check if the user has already rated the recipe
-                    var checkRatingSql = "SELECT COUNT(*) FROM Ratings WHERE UserId = @UserId AND RecipeId = @RecipeId";
-                    var existingRatingCount = await dbConnection.ExecuteScalarAsync<int>(checkRatingSql, new { UserId = userId, RecipeId = recipeId });
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@RecipeId", recipeId);
+                    parameters.Add("@UserId", userId);
+                    parameters.Add("@RatingValue", ratingValue);
 
-                    if (existingRatingCount > 0)
+                    // Example SQL query for rating the recipe using a stored procedure
+                    string storedProcedure = "sp_RateRecipe";
+
+                    // Execute the stored procedure
+                    var ratingStatus = await dbConnection.QueryFirstOrDefaultAsync<int>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
+
+                    // Check the result of the stored procedure and return accordingly
+                    return ratingStatus switch
                     {
-                        // User has already rated this recipe
-                        return false;
-                    }
-
-                    // Check if the user is trying to rate their own recipe
-                    var checkRecipeCreatorSql = "SELECT UserId FROM Recipes WHERE RecipeId = @RecipeId";
-                    var recipeCreatorId = await dbConnection.ExecuteScalarAsync<int>(checkRecipeCreatorSql, new { RecipeId = recipeId });
-
-                    if (recipeCreatorId == userId)
-                    {
-                        // User cannot rate their own recipe
-                        return false;
-                    }
-
-                    // Insert the new rating into the database
-                    var insertRatingSql = "INSERT INTO Ratings (RecipeId, UserId, RatingValue) VALUES (@RecipeId, @UserId, @RatingValue)";
-                    await dbConnection.ExecuteAsync(insertRatingSql, new { RecipeId = recipeId, UserId = userId, RatingValue = ratingValue });
-
-                    // Update the average rating for the recipe
-                    var updateAverageRatingSql = @"
-                UPDATE Recipes 
-                SET AverageRating = (
-                    SELECT AVG(CAST(RatingValue AS DECIMAL(3, 2))) 
-                    FROM Ratings 
-                    WHERE RecipeId = @RecipeId
-                )
-                WHERE RecipeId = @RecipeId";
-                    await dbConnection.ExecuteAsync(updateAverageRatingSql, new { RecipeId = recipeId });
-
-                    return true;
+                        1 => true,   // Rating successful
+                        0 => false,  // User cannot rate their own recipe
+                        -1 => false, // User has already rated this recipe
+                        -2 => false, // Invalid rating value
+                        _ => false   // Recipe not found
+                    };
                 }
             }
             catch (Exception ex)

@@ -36,24 +36,18 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     dbConnection.Open();
 
-                    // Check if the category already exists
-                    var checkCategoryQuery = "SELECT * FROM Categories WHERE CategoryName = @CategoryName";
-                    var existingCategory = await dbConnection.QueryFirstOrDefaultAsync<Category>(
-                        checkCategoryQuery,
-                        new { CategoryName = categoryName }
-                    );
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CategoryName", categoryName);
 
-                    if (existingCategory != null)
-                    {
-                        _logger.LogWarning($"Category '{categoryName}' already exists.");
-                        return -1; // Category already exists
-                    }
+                    // Example SQL query for creating a category
+                    string storedProcedure = "sp_CreateCategory";
 
-                    // Insert the new category into the database
-                    var insertCategoryQuery = "INSERT INTO Categories (CategoryName) VALUES (@CategoryName)";
-                    var affectedRows = await dbConnection.ExecuteAsync(
-                        insertCategoryQuery,
-                        new { CategoryName = categoryName }
+                    // Execute the stored procedure
+                    var affectedRows = await dbConnection.QueryFirstOrDefaultAsync<int>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
                     );
 
                     return affectedRows;
@@ -75,27 +69,25 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     dbConnection.Open();
 
-                    // Check if the category exists before attempting to delete
-                    var checkCategoryQuery = "SELECT * FROM Categories WHERE CategoryId = @CategoryId";
-                    var existingCategory = await dbConnection.QueryFirstOrDefaultAsync<Category>(
-                        checkCategoryQuery,
-                        new { CategoryId = categoryId }
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CategoryId", categoryId, DbType.Int32, ParameterDirection.Input);
+                    parameters.Add("@Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                    // Example SQL query for calling the stored procedure
+                    string storedProcedure = "sp_DeleteCategory";
+
+                    // Execute the stored procedure
+                    await dbConnection.ExecuteAsync(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
                     );
 
-                    if (existingCategory == null)
-                    {
-                        _logger.LogWarning($"Category with ID {categoryId} does not exist.");
-                        return false; // Category does not exist
-                    }
+                    // Retrieve the output parameter value
+                    var success = parameters.Get<int>("@Success");
 
-                    // Delete the category from the database
-                    var deleteCategoryQuery = "DELETE FROM Categories WHERE CategoryId = @CategoryId";
-                    var affectedRows = await dbConnection.ExecuteAsync(
-                        deleteCategoryQuery,
-                        new { CategoryId = categoryId }
-                    );
-
-                    return affectedRows > 0; // Return true if at least one row was affected (category deleted)
+                    return success == 1; // Return true if the category was deleted successfully
                 }
             }
             catch (Exception ex)
@@ -113,9 +105,18 @@ namespace RecipeManagementWebAPI.Repository
                 {
                     dbConnection.Open();
 
-                    // Retrieve all categories from the database
-                    var getAllCategoriesQuery = "SELECT * FROM Categories";
-                    var categories = await dbConnection.QueryAsync<CategoryDto>(getAllCategoriesQuery);
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+
+                    // Example SQL query for fetching all categories
+                    string storedProcedure = "sp_GetAllCategories";
+
+                    // Execute the stored procedure
+                    var categories = await dbConnection.QueryAsync<CategoryDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return categories;
                 }

@@ -205,7 +205,7 @@ namespace RecipeManagementWebAPI.Controllers
                     return NotFound($"Recipe with ID {recipeId} not found or you don't have the authority to delete it.");
                 }
 
-                return NoContent(); // Recipe deleted successfully
+                return Ok($"Recipe with ID {recipeId} has been successfully deleted."); // Recipe deleted successfully
             }
             catch (Exception ex)
             {

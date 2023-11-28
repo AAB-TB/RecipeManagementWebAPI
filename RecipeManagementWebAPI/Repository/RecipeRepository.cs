@@ -31,26 +31,27 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // Define the SQL query to insert the new recipe into the database and associate it with the user
-                    string insertRecipeSql = @"
-                INSERT INTO Recipes (Title, Description, Ingredients, CategoryId, UserId)
-                VALUES (@Title, @Description, @Ingredients, @CategoryId, @UserId);
-            ";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Title", createRecipeDto.Title);
+                    parameters.Add("@Description", createRecipeDto.Description);
+                    parameters.Add("@Ingredients", createRecipeDto.Ingredients);
+                    parameters.Add("@CategoryId", createRecipeDto.CategoryId);
+                    parameters.Add("@UserId", userId);
 
-                    // Execute the SQL query to insert the new recipe into the database
-                    int affectedRows = await dbConnection.ExecuteAsync(insertRecipeSql, new
-                    {
-                        createRecipeDto.Title,
-                        createRecipeDto.Description,
-                        createRecipeDto.Ingredients,
-                        createRecipeDto.CategoryId,
-                        UserId = userId
-                    });
+                    // Example SQL query for creating a recipe
+                    string storedProcedure = "sp_CreateRecipe";
+
+                    // Execute the stored procedure
+                    int affectedRows = await dbConnection.ExecuteAsync(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     // Return true if at least one row was affected (recipe created successfully), otherwise return false
                     return affectedRows > 0;
@@ -67,29 +68,31 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // Check if the recipe exists and belongs to the logged-in user
-                    var checkRecipeExistsSql = "SELECT * FROM Recipes WHERE RecipeId = @RecipeId AND UserId = @UserId";
-                    var existingRecipe = await dbConnection.QueryFirstOrDefaultAsync<RecipeDto>(checkRecipeExistsSql,
-                        new { RecipeId = recipeId, UserId = userId });
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@RecipeId", recipeId);
+                    parameters.Add("@UserId", userId);
+                    parameters.Add("@Success", dbType: DbType.Boolean, direction: ParameterDirection.Output);
 
-                    if (existingRecipe == null)
-                    {
-                        // Recipe not found or does not belong to the user
-                        return false;
-                    }
+                    // Example SQL query for calling the stored procedure
+                    string storedProcedure = "sp_DeleteRecipe";
 
-                    // SQL query for deleting the recipe
-                    var deleteRecipeSql = "DELETE FROM Recipes WHERE RecipeId = @RecipeId AND UserId = @UserId";
+                    // Execute the stored procedure
+                    await dbConnection.ExecuteAsync(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
-                    // Delete the recipe
-                    var affectedRows = await dbConnection.ExecuteAsync(deleteRecipeSql, new { RecipeId = recipeId, UserId = userId });
+                    // Retrieve the value of the output parameter
+                    bool success = parameters.Get<bool>("@Success");
 
-                    return affectedRows > 0;
+                    return success; // Return true if the recipe was deleted
+
                 }
             }
             catch (Exception ex)
@@ -104,29 +107,22 @@ namespace RecipeManagementWebAPI.Repository
 
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // SQL query to get all recipes with category name and user name
-                    var getAllRecipesSql = @"
-                SELECT 
-                    r.RecipeId, 
-                    r.Title, 
-                    r.Description, 
-                    r.Ingredients, 
-                    r.CategoryId, 
-                    r.UserId, 
-                    r.AverageRating,
-                    c.CategoryName, 
-                    u.Username as UserName
-                FROM Recipes r
-                INNER JOIN Categories c ON r.CategoryId = c.CategoryId
-                INNER JOIN Users u ON r.UserId = u.UserId";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
 
-                    // Execute the query and retrieve the recipes
-                    var recipes = await dbConnection.QueryAsync<RecipeDto>(getAllRecipesSql);
+                    // Example SQL query for fetching all recipes
+                    string storedProcedure = "sp_GetAllRecipes";
+
+                    // Execute the stored procedure
+                    var recipes = await dbConnection.QueryAsync<RecipeDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return recipes;
                 }
@@ -142,30 +138,23 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // SQL query to get recipes by category names
-                    var getRecipesByCategoriesSql = @"
-                SELECT 
-                    r.RecipeId, 
-                    r.Title, 
-                    r.Description, 
-                    r.Ingredients, 
-                    r.CategoryId, 
-                    r.UserId, 
-                    r.AverageRating,
-                    c.CategoryName, 
-                    u.Username as UserName
-                FROM Recipes r
-                INNER JOIN Categories c ON r.CategoryId = c.CategoryId
-                INNER JOIN Users u ON r.UserId = u.UserId
-                WHERE c.CategoryName IN @Categories";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CategoriesList", string.Join(",", categories));
 
-                    // Execute the query and retrieve the recipes
-                    var recipes = await dbConnection.QueryAsync<RecipeDto>(getRecipesByCategoriesSql, new { Categories = categories });
+                    // Example SQL query for fetching recipes by categories
+                    string storedProcedure = "sp_GetRecipesByCategories";
+
+                    // Execute the stored procedure
+                    var recipes = await dbConnection.QueryAsync<RecipeDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return recipes;
                 }
@@ -181,16 +170,23 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // SQL query to get recipes by creator name
-                    var getRecipesByCreatorNameSql = "SELECT * FROM Recipes WHERE UserId IN (SELECT UserId FROM Users WHERE LOWER(Username) = LOWER(@CreatorName))";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CreatorName", creatorName);
 
-                    // Execute the query and retrieve the recipes
-                    var recipes = await dbConnection.QueryAsync<RecipeDto>(getRecipesByCreatorNameSql, new { CreatorName = creatorName });
+                    // Example SQL query for fetching recipes by creator name
+                    string storedProcedure = "sp_GetRecipesByCreatorName";
+
+                    // Execute the stored procedure
+                    var recipes = await dbConnection.QueryAsync<RecipeDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return recipes;
                 }
@@ -206,16 +202,23 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // SQL query to get recipes by title
-                    var getRecipesByTitleSql = "SELECT * FROM Recipes WHERE LOWER(Title) = LOWER(@Title)";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Title", title);
 
-                    // Execute the query and retrieve the recipes
-                    var recipes = await dbConnection.QueryAsync<RecipeDto>(getRecipesByTitleSql, new { Title = title });
+                    // Example SQL query for fetching recipes by title
+                    string storedProcedure = "sp_GetRecipesByTitle";
+
+                    // Execute the stored procedure
+                    var recipes = await dbConnection.QueryAsync<RecipeDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return recipes;
                 }
@@ -231,16 +234,23 @@ namespace RecipeManagementWebAPI.Repository
         {
             try
             {
-                // Use Dapper connection for SQL query
                 using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
                 {
                     dbConnection.Open();
 
-                    // SQL query to search recipes by partial title
-                    var searchRecipesByPartialSql = "SELECT * FROM Recipes WHERE LOWER(Title) LIKE LOWER(@PartialTitle)";
+                    // Use dynamic parameters
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@PartialTitle", partialTitle);
 
-                    // Execute the query and retrieve the recipes
-                    var recipes = await dbConnection.QueryAsync<RecipeDto>(searchRecipesByPartialSql, new { PartialTitle = $"%{partialTitle}%" });
+                    // Example SQL query for searching recipes by partial title
+                    string storedProcedure = "sp_SearchRecipesByPartial";
+
+                    // Execute the stored procedure
+                    var recipes = await dbConnection.QueryAsync<RecipeDto>(
+                        storedProcedure,
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
 
                     return recipes;
                 }
@@ -254,58 +264,45 @@ namespace RecipeManagementWebAPI.Repository
 
         public async Task<bool> UpdateRecipeAsync(int userId, UpdateRecipeDto updateRecipeDto)
         {
-            try
+           try
+    {
+        using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
+        {
+            dbConnection.Open();
+
+            // Use dynamic parameters
+            var parameters = new DynamicParameters();
+            parameters.Add("@RecipeId", updateRecipeDto.RecipeId);
+            parameters.Add("@UserId", userId);
+            parameters.Add("@Title", updateRecipeDto.Title);
+            parameters.Add("@Description", updateRecipeDto.Description);
+            parameters.Add("@Ingredients", updateRecipeDto.Ingredients);
+            parameters.Add("@CategoryId", updateRecipeDto.CategoryId);
+
+            // Example SQL query for updating the recipe using a stored procedure
+            string storedProcedure = "sp_UpdateRecipe";
+
+            // Execute the stored procedure
+            var updateStatus = await dbConnection.QueryFirstOrDefaultAsync<int>(
+                storedProcedure,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            // Check the result of the stored procedure and return accordingly
+            return updateStatus switch
             {
-                // Use Dapper connection for SQL query
-                using (IDbConnection dbConnection = _dapperContext.GetDbConnection())
-                {
-                    dbConnection.Open();
-
-                    // Check if the recipe exists and belongs to the logged-in user
-                    var checkRecipeExistsSql = "SELECT * FROM Recipes WHERE RecipeId = @RecipeId AND UserId = @UserId";
-                    var existingRecipe = await dbConnection.QueryFirstOrDefaultAsync<RecipeDto>(checkRecipeExistsSql,
-                        new { updateRecipeDto.recipeId, UserId = userId });
-
-                    if (existingRecipe == null)
-                    {
-                        // Recipe not found or does not belong to the user
-                        return false;
-                    }
-
-                    // Ensure that the user updating the recipe is the same user who created it
-                    if (existingRecipe.UserId != userId)
-                    {
-                        return false;
-                    }
-
-                    // SQL query for updating the recipe
-                    var updateRecipeSql = @"
-                UPDATE Recipes 
-                SET Title = @Title, 
-                    Description = @Description, 
-                    Ingredients = @Ingredients, 
-                    CategoryId = @CategoryId 
-                WHERE RecipeId = @RecipeId AND UserId = @UserId";
-
-                    // Update the recipe
-                    var affectedRows = await dbConnection.ExecuteAsync(updateRecipeSql, new
-                    {
-                        updateRecipeDto.recipeId,
-                        updateRecipeDto.Title,
-                        updateRecipeDto.Description,
-                        updateRecipeDto.Ingredients,
-                        updateRecipeDto.CategoryId,
-                        UserId = userId
-                    });
-
-                    return affectedRows > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error updating recipe: {ex.Message}");
-                throw; // Handle the exception based on your application's requirements
-            }
+                1 => true,   // Recipe updated successfully
+                0 => false,  // Recipe does not belong to the user
+                _ => false   // Recipe not found
+            };
+        }
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError($"Error updating recipe: {ex.Message}");
+        throw; // Handle the exception based on your application's requirements
+    }
         }
     }
 }
